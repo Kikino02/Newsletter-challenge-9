@@ -16,7 +16,7 @@ function formSuccess() {
 
 function validateEmail(email) {
     const emailRegex = '/^[^\s@]+@[^\s@]+\.[^\s@]+$/';
-    return emailRegex.test(email);
+    return emailRegex.match(email) === null;
 }
 
 form.addEventListener('submit', (e) => {
