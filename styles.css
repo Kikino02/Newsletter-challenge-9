@@ -1,0 +1,184 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,400;0,700&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+p {
+  font-size: 16px;
+}
+
+body {
+  height: 100vh;
+  font-family: "Roboto", sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: hsl(235, 18%, 26%);
+}
+
+/* Button */
+button {
+  cursor: pointer;
+  border: none;
+  padding: 15px 0;
+  width: 100%;
+  background-color: hsl(234, 29%, 20%);
+  border-radius: 10px;
+  color: hsl(0, 0%, 100%);
+  font-weight: 700;
+  transition: 0.3s ease;
+}
+button:hover, button:active {
+  background: linear-gradient(90deg, rgb(249, 83, 112) 0%, rgb(255, 98, 88) 33%, rgb(255, 104, 64) 100%);
+  box-shadow: 0 8px 25px rgba(249, 83, 112, 0.7);
+}
+
+.card {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: hsl(0, 0%, 100%);
+  border-radius: 30px;
+  padding: 20px;
+  width: 800px;
+}
+.card .card__left {
+  display: flex;
+  flex-direction: column;
+  padding: 40px;
+  gap: 30px;
+}
+.card .card__left .left__title {
+  color: hsl(234, 29%, 20%);
+  font-size: 3rem;
+  font-weight: 700;
+}
+.card .card__left .left__description {
+  color: hsl(234, 29%, 20%);
+  font-size: 0.9rem;
+}
+.card .card__left .left__list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  list-style-position: inside;
+  list-style: none;
+}
+.card .card__left .left__list li {
+  color: hsl(234, 29%, 20%);
+  position: relative;
+  padding-left: 30px;
+  font-size: 0.9rem;
+}
+.card .card__left .left__list li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  width: 19px;
+  height: 19px;
+  background-image: url(./assets/images/icon-list.svg);
+  background-size: cover;
+}
+.card .card__left .form__input {
+  display: flex;
+  flex-direction: column;
+}
+.card .card__left .form__input .form__text {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 5px;
+}
+.card .card__left .form__input .form__text label {
+  color: hsl(234, 29%, 20%);
+  font-weight: 700;
+  font-size: 0.65rem;
+}
+.card .card__left .form__input .form__text span {
+  color: hsl(4, 100%, 67%);
+  font-weight: 700;
+  font-size: 0.65rem;
+}
+.card .card__left .form__input input {
+  border: 1px solid hsl(231, 7%, 60%);
+  padding: 15px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  width: 100%;
+  outline: none;
+  transition: 0.3s ease;
+}
+.card .card__left .form__input input:focus {
+  border: 1px solid hsl(235, 18%, 26%);
+}
+.card .card__right img {
+  width: 100%;
+}
+
+.success_message {
+  width: 400px;
+  background: hsl(0, 0%, 100%);
+  padding: 40px;
+  border-radius: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+.success_message .success__icon {
+  width: 50px;
+}
+.success_message .success__title {
+  font-size: 3rem;
+  color: hsl(234, 29%, 20%);
+  line-height: 1;
+}
+.success_message .success__description {
+  font-size: 0.9rem;
+  color: hsl(234, 29%, 20%);
+}
+
+/* Error states */
+.hidden {
+  display: none !important;
+}
+
+.error {
+  border: 1px solid hsl(4, 100%, 67%) !important;
+  color: tomato !important;
+  background: hsl(4, 100%, 95%) !important;
+}
+
+/* End of error states */
+@media screen and (max-width: 768px) {
+  .card {
+    display: flex;
+    flex-direction: column-reverse;
+    width: 100%;
+    height: 100vh;
+    border-radius: 0;
+    padding: 0;
+    overflow: hidden;
+  }
+  .card .card__left {
+    padding: 20px 25px;
+    gap: 20px;
+  }
+  .card .card__left .form__input input {
+    margin-bottom: 10px;
+  }
+  .success_message {
+    width: 100%;
+    height: 100vh;
+    justify-content: center;
+    border-radius: 0;
+  }
+  .success_message button {
+    align-self: flex-end;
+  }
+}/*# sourceMappingURL=styles.css.map */

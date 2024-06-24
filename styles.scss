@@ -1,0 +1,216 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,400;0,700&display=swap');
+
+$clr-tomato: hsl(4, 100%, 67%);
+
+$clr-dark-slate-grey: hsl(234, 29%, 20%);
+$clr-charcoal-grey: hsl(235, 18%, 26%);
+$clr-grey: hsl(231, 7%, 60%);
+$clr-white: hsl(0, 0%, 100%);
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+*,
+*::after,
+*::before{
+    box-sizing: border-box;
+}
+
+p{
+    font-size: 16px;
+}
+
+body{
+    height: 100vh;
+    font-family: 'Roboto', sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: $clr-charcoal-grey;
+}
+
+/* Button */
+button{
+    cursor: pointer;
+    border: none;
+    padding: 15px 0;
+    width: 100%;
+    background-color: $clr-dark-slate-grey;
+    border-radius: 10px;
+    color: $clr-white;
+    font-weight: 700;
+    transition: 0.3s ease;
+    &:hover,
+    &:active{
+        background: linear-gradient(90deg, rgba(249,83,112,1) 0%, rgba(255,98,88,1) 33%, rgba(255,104,64,1) 100%);
+        box-shadow: 0 8px 25px rgba(249,83,112, 0.7);
+    }
+}
+
+.card{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: $clr-white;
+    border-radius: 30px;
+    padding: 20px;
+    width: 800px;
+
+    .card__left{
+        display: flex;
+        flex-direction: column;
+        padding: 40px;
+        gap: 30px;
+        .left__title{
+            color: $clr-dark-slate-grey;
+            font-size: 3rem;
+            font-weight: 700;
+        }
+        .left__description{
+            color: $clr-dark-slate-grey;
+            font-size: 0.9rem;
+        }
+        .left__list{
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            list-style-position: inside;
+            list-style: none;
+            li{
+                color: $clr-dark-slate-grey;
+                position: relative;
+                padding-left: 30px;
+                font-size: 0.9rem;
+                &::before{
+                    content: '';
+                    position: absolute;
+                    left: 0;
+                    width: 19px;
+                    height: 19px;
+                    background-image: url(./assets/images/icon-list.svg);
+                    background-size: cover;
+                }
+            }
+        }
+        .form__input{
+            display: flex;
+            flex-direction: column;
+            .form__text{
+                display: flex;
+                justify-content: space-between;
+                margin-bottom: 5px;
+                label{
+                    color: $clr-dark-slate-grey;
+                    font-weight: 700;
+                    font-size: 0.65rem;
+                }
+                span{
+                    color: $clr-tomato;
+                    font-weight: 700;
+                    font-size: 0.65rem;
+                }
+            }
+            input{
+                border: 1px solid $clr-grey;
+                padding: 15px;
+                border-radius: 10px;
+                margin-bottom: 20px;
+                width: 100%;
+                outline: none;
+                transition: 0.3s ease;
+                &:focus{
+                    border: 1px solid $clr-charcoal-grey;
+                }
+            }
+        }
+    }
+    .card__right{
+        img{
+            width: 100%;
+        }
+    }
+}
+
+.success_message{
+    width: 400px;
+    background: $clr-white;
+    padding: 40px;
+    border-radius: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+
+    .success__icon{
+        width: 50px;
+    }
+
+    .success__title{
+        font-size: 3rem;
+        color: $clr-dark-slate-grey;
+        line-height: 1;
+    }
+
+    .success__description{
+        font-size: 0.9rem;
+        color: $clr-dark-slate-grey;
+    }
+
+}
+
+
+
+/* Error states */
+
+.hidden{
+    display: none !important;
+}
+
+.error{
+    border: 1px solid $clr-tomato !important;
+    color: tomato !important;
+    background: hsl(4, 100%, 95%) !important;
+}
+
+/* End of error states */
+
+
+
+@media screen and (max-width: 1024px){
+
+}
+
+@media screen and (max-width: 768px){
+    .card{
+        display: flex;
+        flex-direction: column-reverse;
+        width: 100%;
+        height: 100vh;
+        border-radius: 0;
+        padding: 0;
+        overflow: hidden;
+    
+        .card__left{
+            padding: 20px 25px;
+            gap: 20px;
+
+            .form__input{
+                input{
+                    margin-bottom: 10px;
+                }
+            }
+        }
+    }
+
+    .success_message{
+        width: 100%;
+        height: 100vh;
+        justify-content: center;        
+        border-radius: 0;
+        button{
+            align-self: flex-end;
+        }
+    }
+}
+
