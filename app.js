@@ -15,7 +15,7 @@ function formSuccess() {
 }
 
 function validateEmail(email) {
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    const emailRegex = '/^[^\s@]+@[^\s@]+\.[^\s@]+$/';
     return emailRegex.test(email);
 }
 
@@ -28,10 +28,10 @@ form.addEventListener('submit', (e) => {
         userEmail.textContent = email;
         emailInput.value = '';
 
-        errorMsg.classList.add('active');
+        errorMsg.classList.add('hidden');
         emailInput.classList.remove('error');
     } else {
-        errorMsg.classList.remove('active');
+        errorMsg.classList.remove('hidden');
         emailInput.classList.add('error');
     }
 })
